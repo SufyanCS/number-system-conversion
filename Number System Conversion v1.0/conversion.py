@@ -12,7 +12,7 @@ print( ''' \033[34m
 ''')
 
 def BinToDecF(BinToDec):
-    BinToDecList = [] #empty list [1,1,0,0,1]
+    BinToDecList = []
     for i in BinToDec: 
         BinToDecList.append(i)
     BinToDecList.reverse() 
@@ -22,20 +22,20 @@ def BinToDecF(BinToDec):
     SumBinary = []
     BinToDecList = list(map(int, BinToDecList))
     for i in BinToDecList:
-        if i <= 1: # Only 0 | 1 numbers
-            SumBinary.append((Binary_Base**power)*i) #mathmatic equasion
-            BinToDec_Exp.extend(["( (",Binary_Base,"**",power," ) * ",i," ) " ,"+ " ]) #Expletion
-            power +=1 #rase the power up after each cycle
-        else: # Break the condition if number out of range (0,1)
+        if i <= 1:
+            SumBinary.append((Binary_Base**power)*i)
+            BinToDec_Exp.extend(["( (",Binary_Base,"**",power," ) * ",i," ) " ,"+ " ])
+            power +=1
+        else:
             break
     global FinalResualt_BinToDec
-    FinalResualt_BinToDec = sum(SumBinary) #sum all entegers in list
+    FinalResualt_BinToDec = sum(SumBinary)
     
     if FinalResualt_BinToDec != 0:
         print ("Resualt after converting the binary to decimal => ",FinalResualt_BinToDec)
 
     elif FinalResualt_BinToDec == 0:
-        print ("Enter only 0 | 1 Numbers!") # تعديل
+        print ("Enter only 0 | 1 Numbers!") 
     else:
         print ("Enter only 0 | 1 !")   
     
@@ -84,15 +84,15 @@ def DecToOctF(DecToOct):
     DecToOct_Exp = []
     Octal_Base = 8
     while DecToOct >= 1: 
-        DecToOct_Rem = DecToOct%8 #get remainder
+        DecToOct_Rem = DecToOct%8 
         if DecToOct_Rem != 0:
             DecToOctList.append(DecToOct_Rem)
             DecToOct_Exp.extend([DecToOct , "/", Octal_Base ,"=",DecToOct/8,"Reminder",DecToOct_Rem,"\n"])
         
         DecToOct=DecToOct/8
         DecToOct=int(DecToOct) 
-    DecToOctList.reverse() #reverse the list
-    FinalResault_DecToOct = print('The Octal value is: ',''.join(map(str, DecToOctList))) #output value
+    DecToOctList.reverse() 
+    FinalResault_DecToOct = print('The Octal value is: ',''.join(map(str, DecToOctList)))
     if FinalResault_DecToOct != 0 :
         DecToOct_Ex_choise = int(input(("If you want to see the Explenation press 1: ")))
         if DecToOct_Ex_choise == 1:
@@ -107,8 +107,8 @@ def DecToHexF(DecToHex):
     DecToHexList = list()
     DecToHex_Exp = []
     Hex_Base = 16
-    while DecToHex >= 1: #convert to octal
-        DecToHex_Rem = DecToHex%16 #get remainder
+    while DecToHex >= 1: 
+        DecToHex_Rem = DecToHex%16
         
         if DecToHex_Rem != 0:
 
@@ -132,8 +132,8 @@ def DecToHexF(DecToHex):
             elif n == 11:
                 DecToHexList[i] = "F"
 
-    DecToHexList.reverse() #reverse the list
-    FinalResault_HexToDec = print('The HexaDecimal value is: ',''.join(map(str, DecToHexList))) #output value
+    DecToHexList.reverse()
+    FinalResault_HexToDec = print('The HexaDecimal value is: ',''.join(map(str, DecToHexList)))
     if FinalResault_HexToDec != 0 :
         DecToHex_Ex_choise = int(input(("If you want to see the Explenation press 1: ")))
         if DecToHex_Ex_choise == 1:
@@ -146,25 +146,25 @@ def DecToHexF(DecToHex):
 
 def OctToDecF(OctToDec):
     
-    OctToDecList = [] #empty list
-    for i in OctToDec: #To move data from user input user input To reversed list
+    OctToDecList = []
+    for i in OctToDec:
         OctToDecList.append(i)
-    OctToDecList.reverse() #List reversed
-    power = 0 #First power
-    Octal_Base = 8 #Base of System
-    OctToDec_Exp = [] # only for Exeption
+    OctToDecList.reverse()
+    power = 0
+    Octal_Base = 8
+    OctToDec_Exp = []
     OctToDec_Sum = []
-    OctToDecList = list(map(int, OctToDecList)) # convert Element in list From strings To Integers
+    OctToDecList = list(map(int, OctToDecList))
     for i in OctToDecList:
-        if i <= 7: # Only From 0 To 7 numbers
-            OctToDec_Sum.append((Octal_Base**power)*i) #mathmatic equasion
-            OctToDec_Exp.extend(["( ( ",Octal_Base,"**",power," ) * ",i," ) + " ]) #Expletion
-            power +=1 #rase the power up after each cycle
+        if i <= 7: 
+            OctToDec_Sum.append((Octal_Base**power)*i)
+            OctToDec_Exp.extend(["( ( ",Octal_Base,"**",power," ) * ",i," ) + " ])
+            power +=1
 
         else: 
             break
     global FinalResualt_OctToDec
-    FinalResualt_OctToDec = sum(OctToDec_Sum) #sum all entegers in list
+    FinalResualt_OctToDec = sum(OctToDec_Sum)
 
 
     if FinalResualt_OctToDec != 0:
@@ -185,8 +185,8 @@ def OctToDecF(OctToDec):
 
 def HexToDecF(HexToDec):
     
-    HexToDexList = [] #empty list
-    for i in HexToDec: #To move data from user input user input To reversed list
+    HexToDexList = []
+    for i in HexToDec:
         if i == "A":
             i = 10
         elif i == "B":
@@ -201,22 +201,22 @@ def HexToDecF(HexToDec):
             i = 15
         
         HexToDexList.append(i)
-    HexToDexList.reverse() #List reversed
-    power = 0 #First power
-    HexaDecimal_Base = 16 #Base of System
-    HexToDec_Exp = [] # only for Exeption
+    HexToDexList.reverse()
+    power = 0
+    HexaDecimal_Base = 16
+    HexToDec_Exp = []
     SumHex = []
-    HexToDexList = list(map(int, HexToDexList)) # convert Element in list From strings To Integers
+    HexToDexList = list(map(int, HexToDexList))
     for i in HexToDexList:
-        if i <= 15: # Only 0 | 1 numbers
-            SumHex.append((HexaDecimal_Base**power)*i) #mathmatic equasion
-            HexToDec_Exp.extend(["( (",HexaDecimal_Base,"**",power," ) * ",i," ) " ,"+ " ]) #Expletion
-            power +=1 #rase the power up after each cycle
+        if i <= 15:
+            SumHex.append((HexaDecimal_Base**power)*i)
+            HexToDec_Exp.extend(["( (",HexaDecimal_Base,"**",power," ) * ",i," ) " ,"+ " ])
+            power +=1
 
-        else: # Break the condition if number out of range (0,1)
+        else:
             break
     global FinalResualt_HexToDec
-    FinalResualt_HexToDec = sum(SumHex) #sum all entegers in list
+    FinalResualt_HexToDec = sum(SumHex)
 
     if FinalResualt_HexToDec != 0:
         print ("Resualt after converting the Hexadecimal to decimal => ",FinalResualt_HexToDec)
