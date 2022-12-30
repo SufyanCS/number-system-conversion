@@ -1,13 +1,13 @@
-import pyfiglet
+
 d = '\033[1;34m'
-ascii_banner = pyfiglet.figlet_format("number system conversion", width=90)
-print(ascii_banner)
+
+
 print( ''' \033[34m
     +-----------------------------------------------+
+    | [+]       Number System Conversion       [+]  |
     | [+]         Sufyan Hussein | CS          [+]  |
     | [+]     https://github.com/SufyanCS      [+]  |  
     | [+]   https://buymeacoffee.com/SufyanCS  [+]  |
-    | [+]         Insta: @Suf.2002             [+]  |
     +-----------------------------------------------+
 ''')
 
